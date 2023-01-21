@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Upload-img-using-ajax", "Upload-img-using-ajax\Upload-img-using-ajax.csproj", "{98F2E32C-9AE3-40EC-AED7-BD2666AC18E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98F2E32C-9AE3-40EC-AED7-BD2666AC18E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F2E32C-9AE3-40EC-AED7-BD2666AC18E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F2E32C-9AE3-40EC-AED7-BD2666AC18E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F2E32C-9AE3-40EC-AED7-BD2666AC18E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDC5C188-1C26-4782-801A-B29FA0C5AE21}
+	EndGlobalSection
+EndGlobal
