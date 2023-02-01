@@ -14,8 +14,10 @@ namespace Upload_img_using_ajax.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult UploadFiles()
+        public ActionResult UploadFiles(FormCollection f)
         {
+            string number = f["Number"];
+          
             // Checking no of files injected in Request object  
             if (Request.Files.Count > 0)
             {

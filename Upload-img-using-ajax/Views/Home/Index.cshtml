@@ -1,47 +1,60 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<input type="file" id="FileUpload1" />
-<input type="button" id="btnUpload" value="Upload Files" />
+<form id="data" action="/" method="post">
+    <input type="number" name="Number" value="" />
+    <input name="FileUpload1" type="file" id="FileUpload1" />
+    <input type="submit" id="btnUpload" value="Upload Files" />
+</form>
 
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 <script>
     $(document).ready(function () {
-        $('#btnUpload').click(function () {
+        $('form#data').submit(function () {
 
-            // Checking whether FormData is available in browser
-            if (window.FormData !== undefined) {
+            //// Checking whether FormData is available in browser
+            //if (window.FormData !== undefined) {
 
-                var fileUpload = $("#FileUpload1").get(0);
-                var files = fileUpload.files;
+            //    var fileUpload = $("#FileUpload1").get(0);
+            //    var files = fileUpload.files;
 
-                // Create FormData object
-                var fileData = new FormData();
+            //    // Create FormData object
+            //    var fileData = new FormData();
 
-                // Looping over all files and add it to FormData object
-                for (var i = 0; i < files.length; i++) {
-                    fileData.append(files[i].name, files[i]);
-                }
+            //    // Looping over all files and add it to FormData object
+            //    for (var i = 0; i < files.length; i++) {
+            //        fileData.append(files[i].name, files[i]);
+            //    }
 
                 // Adding one more key to FormData object
                /* fileData.append('username', ‘Manas’);*/
+                var formData = new FormData(this);
 
-                $.ajax({
-                    url: '/Home/UploadFiles',
-                    type: "POST",
-                    contentType: false, // Not to set any content header
-                    processData: false, // Not to process data
-                    data: fileData,
-                    success: function (result) {
-                        alert(result);
-                    },
-                    error: function (err) {
-                        alert(err.statusText);
-                    }
+            $.ajax({
+                url:'/Home/UploadFiles',
+                type: 'POST',
+                data: formData,
+                success: function (data) {
+                    alert(data)
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+                    //url: '/Home/UploadFiles',
+                    //type: "POST",
+                    //contentType: false, // Not to set any content header
+                    //processData: false, // Not to process data
+                    //data: fileData,
+                    //success: function (result) {
+                    //    alert(result);
+                    //},
+                    //error: function (err) {
+                    //    alert(err.statusText);
+                    //}
                 });
-            } else {
-                alert("FormData is not supported.");
-            }
+            //} else {
+            //    alert("FormData is not supported.");
+            //}
         });
     });
 </script>
